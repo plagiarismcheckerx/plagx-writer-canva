@@ -1,0 +1,58 @@
+/* Scroll container */
+.scrollContainer {
+  box-sizing: border-box;
+  overflow-y: scroll;
+  height: 100%;
+  padding-top: var(--ui-kit-space-200);
+  padding-right: var(--ui-kit-space-200);
+  padding-bottom: var(--ui-kit-space-200);
+
+  /* for firefox */
+  scrollbar-width: thin;
+  scrollbar-color: var(--ui-kit-color-content-placeholder-fg) transparent;
+}
+
+.scrollContainer::-webkit-scrollbar {
+  position: absolute;
+  width: var(--ui-kit-base-unit);
+  height: 0;
+}
+
+.scrollContainer::-webkit-scrollbar-track {
+  background: transparent;
+  width: var(--ui-kit-base-unit);
+  margin-top: var(--ui-kit-space-100);
+  margin-bottom: var(--ui-kit-space-100);
+}
+
+.scrollContainer::-webkit-scrollbar-thumb {
+  border-radius: var(--ui-kit-radius-element-standard);
+  background: var(--ui-kit-color-content-placeholder-fg);
+  visibility: hidden;
+}
+
+.scrollContainer:hover::-webkit-scrollbar-thumb,
+.scrollContainer:focus::-webkit-scrollbar-thumb,
+.scrollContainer:focus-within::-webkit-scrollbar-thumb {
+  visibility: visible;
+}
+
+/* Plagx Writer: palette preview */
+.swatchRow {
+  display: flex;
+  gap: var(--ui-kit-space-050);
+}
+
+.swatch {
+  flex: 1;
+  height: 28px;
+  border-radius: var(--ui-kit-radius-element-standard);
+  border: 1px solid var(--ui-kit-color-border);
+  padding: 0;
+  cursor: pointer;
+}
+
+.swatch:hover:not([aria-disabled="true"]) {
+  outline: 2px solid var(--ui-kit-color-primary);
+  outline-offset: 1px;
+}
